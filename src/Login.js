@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { useNavigate, Link } from "react-router-dom";
+import Home from './Home';
 
 // import {useHistory} from 'react-router-dom'
-import Header from './Header'
+// import Header from './Home'
  function Login() {
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
@@ -12,6 +13,8 @@ import Header from './Header'
   //   if (localStorage.getItem('user-info'))
   //   history.push("/add")
   // })
+  const navigate = useNavigate();
+
   async function Login()
 {
     
@@ -41,7 +44,10 @@ import Header from './Header'
       <br/>
       <input type="password" placeholder="password" onChange={(e)=>setPassword(e.target.value)} className="form-control" />
       <br/>
-      <button onClick={Login} className="btn-btn-primary">Login</button>
+      <button  onClick={() => {
+          Login();
+          navigate("/Home");
+        }} className="btn-btn-primary">Login</button>
 
 
 

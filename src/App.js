@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Register from "./Register";
 import Login from "./Login";
+import Home from "./Home";
+// import UsersData from "./Update";
+import Update from "./Update";
 function App() {
   return (
     <>
@@ -10,8 +13,10 @@ function App() {
       {/* <Login/> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/update" element={<Update />} />
         </Routes>
       </BrowserRouter>
     </>
